@@ -1,0 +1,30 @@
+{
+  "job_parameters": {
+    "pncStudy": {
+      "pncMockInputTable": {
+        "ui:widget": "textarea"
+      },
+      "gracePeriod":{
+        "gracePeriodValue":{
+          "ui:widget": "range"
+        }
+      },
+      "cohortGroup": {
+        "startDate": {
+          "ui:widget": "alt-date"
+        },
+        "numOfCohortPeriods": {
+          "ui:widget": "range"
+        }
+      }
+    }
+  },
+  "job_information": {
+    "notification_email": {
+      "ui:widget": "email"
+    },
+    "submitted_timestamp": {
+      "ui:disabled": true
+    }
+  }
+}

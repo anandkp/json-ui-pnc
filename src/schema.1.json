@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "title": "Persistence & Compliance - JSON Builder",
+  "properties": {
+    "job_parameters": {
+      "type": "object",
+      "title": "JOB PARAMETERS",
+      "properties": {
+        "pncStudy": {
+          "type": "object",
+          "title": "P&C STUDY",
+          "properties": {
+            "lengthOfTherapy": {
+              "type": "boolean",
+              "title": "Length of Therapy",
+              "default": false,
+              "examples": [false]
+            },
+            "pncMockInputTable": {
+              "type": "string",
+              "title": "P&C Mock Input Table",
+              "default": "",
+              "examples": [""]
+            }
+          }
+        }
+      }
+    }
+  }
+}

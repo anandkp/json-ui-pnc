@@ -1,0 +1,8 @@
+{
+  "title": "react-jsonschema-form demo",
+  "type": "object",
+  "properties": {
+    "age": { "type": "integer" },
+    "description": { "type": "integer" }
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "P360 - Persistence & Compliance - JSON Builder",
+  "properties": {
+    "job_parameters": {
+      "$id": "#/properties/job_parameters",
+      "type": "object",
+      "title": "JOB PARAMETERS",
+      "properties": {
+        "pncStudy": {
+          "$id": "#/properties/job_parameters/properties/pncStudy",
+          "type": "object",
+          "title": "P&C STUDY",
+          "properties": {
+            "pncPatientStudy": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncPatientStudy",
+              "type": "boolean",
+              "title": "P&C Patient Study",
+              "default": false,
+              "examples": [true]
+            },
+            "persistence": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistence",
+              "type": "boolean",
+              "title": "Persistence",
+              "default": false,
+              "examples": [true]
+            },
+            "compliance": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/compliance",
+              "type": "boolean",
+              "title": "Compliance",
+              "default": false,
+              "examples": [true]
+            },
+            "lengthOfTherapy": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/lengthOfTherapy",
+              "type": "boolean",
+              "title": "Length of Therapy",
+              "default": false,
+              "examples": [false]
+            },
+            "pncMockInputTable": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncMockInputTable",
+              "type": "string",
+              "title": "P&C Mock Input Table",
+              "default": "",
+              "examples": [""],
+              "pattern": "^(.*)$"
+            },
+            "pncReportingLevels": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingLevels",
+              "type": "object",
+              "title": "P&C REPORTING LEVELS",
+              "properties": {
+                "productLevel": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingLevels/properties/productLevel",
+                  "type": "boolean",
+                  "title": "Product Level",
+                  "default": false,
+                  "examples": [true]
+                },
+                "classLevel": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingLevels/properties/classLevel",
+                  "type": "boolean",
+                  "title": "Class Level",
+                  "default": false,
+                  "examples": [false]
+                },
+                "marketLevel": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingLevels/properties/marketLevel",
+                  "type": "boolean",
+                  "title": "Market Level",
+                  "default": false,
+                  "examples": [false]
+                }
+              }
+            },
+            "pncGroupInfo": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncGroupInfo",
+              "type": "object",
+              "title": "P&C GROUP INFO",
+              "properties": {
+                "productGroupName": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncGroupInfo/properties/productGroupName",
+                  "type": "string",
+                  "title": "Product Group Name",
+                  "default": "mkted_prod_nm",
+                  "examples": ["mkted_prod_nm"],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "pncMarketType": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncMarketType",
+              "type": "string",
+              "title": "P&C MARKET TYPE",
+              "default": "MONO",
+              "examples": ["MONO"],
+              "pattern": "^(.*)$"
+            },
+            "gracePeriod": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/gracePeriod",
+              "type": "object",
+              "title": "GRACE PERIOD",
+              "properties": {
+                "gracePeriodEnum": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/gracePeriod/properties/gracePeriodEnum",
+                  "type": "string",
+                  "title": "Grace Period Enum",
+                  "default": "NUM_DAYS",
+                  "examples": ["NUM_DAYS"],
+                  "pattern": "^(.*)$"
+                },
+                "gracePeriodValue": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/gracePeriod/properties/gracePeriodValue",
+                  "type": "integer",
+                  "title": "Grace Period Value",
+                  "default": 29,
+                  "examples": [29]
+                }
+              }
+            },
+            "tieBreaker": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/tieBreaker",
+              "type": "string",
+              "title": "Tie Breaker",
+              "default": "HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID",
+              "examples": ["HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID"],
+              "pattern": "^(.*)$"
+            },
+            "pncAttrRank": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAttrRank",
+              "type": "object",
+              "title": "P&C ATTR RANK",
+              "properties": {
+                "rank": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAttrRank/properties/rank",
+                  "type": "string",
+                  "title": "Rank",
+                  "default": "null",
+                  "examples": [null]
+                },
+                "groupName": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAttrRank/properties/groupName",
+                  "type": "string",
+                  "title": "Group Name",
+                  "default": "null",
+                  "examples": [null]
+                },
+                "fileName": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAttrRank/properties/fileName",
+                  "type": "string",
+                  "title": "File Name",
+                  "default": "null",
+                  "examples": [null]
+                }
+              }
+            },
+            "cohortGroup": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup",
+              "type": "object",
+              "title": "COHORT GROUP",
+              "properties": {
+                "cohortPeriodGrouping": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup/properties/cohortPeriodGrouping",
+                  "type": "string",
+                  "title": "Cohort Period Grouping",
+                  "default": "MONTHLY",
+                  "examples": ["MONTHLY"],
+                  "pattern": "^(.*)$"
+                },
+                "startDate": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup/properties/startDate",
+                  "type": "string",
+                  "title": "Start Date",
+                  "default": "1485907200000",
+                  "examples": ["1485907200000"]
+                },
+                "numOfCohortPeriods": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup/properties/numOfCohortPeriods",
+                  "type": "integer",
+                  "title": "Num of Cohort Periods",
+                  "default": 2,
+                  "examples": [2]
+                }
+              }
+            },
+            "pncReportingIntervals": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingIntervals",
+              "type": "object",
+              "title": "P&C REPORTING INTERVALS",
+              "properties": {
+                "reportingIntervalDays": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingIntervals/properties/reportingIntervalDays",
+                  "type": "integer",
+                  "title": "Reporting Interval Days",
+                  "default": 30,
+                  "examples": [30]
+                },
+                "reportingIntervalsToTrack": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncReportingIntervals/properties/reportingIntervalsToTrack",
+                  "type": "integer",
+                  "title": "Reporting Intervals to Track",
+                  "default": 2,
+                  "examples": [2]
+                }
+              }
+            },
+            "dataAvailability": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/dataAvailability",
+              "type": "string",
+              "title": "Data Availability",
+              "default": "COMPLETE_TIME_PERIODS",
+              "examples": ["COMPLETE_TIME_PERIODS"],
+              "pattern": "^(.*)$"
+            },
+            "timePeriods": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/timePeriods",
+              "type": "object",
+              "title": "TIME PERIODS",
+              "properties": {
+                "pncLookBack": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/timePeriods/properties/pncLookBack",
+                  "type": "integer",
+                  "title": "Look Back",
+                  "default": 30,
+                  "examples": [30]
+                },
+                "pncLookForward": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/timePeriods/properties/pncLookForward",
+                  "type": "integer",
+                  "title": "Look Forward",
+                  "default": 30,
+                  "examples": [30]
+                }
+              }
+            },
+            "persistenceConf": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf",
+              "type": "object",
+              "title": "PERSISTENCE CONF",
+              "properties": {
+                "patientTherapyCategories": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyCategories",
+                  "type": "string",
+                  "title": "Patient Therapy Categories",
+                  "default": "PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE",
+                  "examples": [
+                    "PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "patientTherapyStatusRule": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyStatusRule",
+                  "type": "string",
+                  "title": "Patient Therapy Status Rule",
+                  "default": "SWITCH_BASED_HIERARCHY",
+                  "examples": ["SWITCH_BASED_HIERARCHY"],
+                  "pattern": "^(.*)$"
+                },
+                "patientTherapyStatusType": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyStatusType",
+                  "type": "string",
+                  "title": "Patient Therapy Status Type",
+                  "default": "DYNAMIC_STATUS",
+                  "examples": ["DYNAMIC_STATUS"],
+                  "pattern": "^(.*)$"
+                },
+                "persistencePercentage": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/persistencePercentage",
+                  "type": "integer",
+                  "title": "Persistence Percentage",
+                  "default": 75,
+                  "examples": [75]
+                }
+              }
+            },
+            "retainClaimsWithMonoPnCComplaintFlagAsNo": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/retainClaimsWithMonoPnCComplaintFlagAsNo",
+              "type": "boolean",
+              "title": "Retain Claims With Mono P&C Complaint Flag As No",
+              "default": true,
+              "examples": [true]
+            },
+            "sobFilters": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/sobFilters",
+              "type": "string",
+              "title": "SOB Filters",
+              "default": "ALL",
+              "examples": ["ALL"],
+              "pattern": "^(.*)$"
+            },
+            "complianceConf": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/complianceConf",
+              "type": "object",
+              "title": "COMPLIANCE CONF",
+              "properties": {
+                "complianceMetrics": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/complianceConf/properties/complianceMetrics",
+                  "type": "array",
+                  "title": "Compliance Metrics",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/complianceConf/properties/complianceMetrics/items",
+                    "type": "string",
+                    "title": "Items",
+                    "default": "somemetrics",
+                    "examples": ["somemetrics"],
+                    "pattern": "^(.*)$"
+                  }
+                },
+                "overlappingDaysSupply": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/complianceConf/properties/overlappingDaysSupply",
+                  "type": "boolean",
+                  "title": "Overlapping Days Supply",
+                  "default": false,
+                  "examples": [false]
+                }
+              }
+            },
+            "pncFlexibleOutputFields": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields",
+              "type": "array",
+              "title": "P&C Flexible Output Fields",
+              "items": {
+                "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items",
+                "type": "object",
+                "title": "ITEMS",
+                "properties": {
+                  "columnName": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/columnName",
+                    "type": "string",
+                    "title": "Column Name",
+                    "default": "bin",
+                    "examples": ["bin"],
+                    "pattern": "^(.*)$"
+                  },
+                  "context": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/context",
+                    "type": "string",
+                    "title": "Context",
+                    "default": "",
+                    "examples": [""],
+                    "pattern": "^(.*)$"
+                  },
+                  "columnAlias": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/columnAlias",
+                    "type": "string",
+                    "title": "Column Alias",
+                    "default": "bin",
+                    "examples": ["bin"],
+                    "pattern": "^(.*)$"
+                  },
+                  "patientHubColumnName": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/patientHubColumnName",
+                    "type": "string",
+                    "title": "Patient Hub Colum Name",
+                    "default": "bin",
+                    "examples": ["bin"],
+                    "pattern": "^(.*)$"
+                  },
+                  "externalColumnName": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/externalColumnName",
+                    "type": "string",
+                    "title": "External Column Name",
+                    "default": "",
+                    "examples": [""],
+                    "pattern": "^(.*)$"
+                  },
+                  "externalTableName": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/externalTableName",
+                    "type": "string",
+                    "title": "External Table Name",
+                    "default": "",
+                    "examples": [""],
+                    "pattern": "^(.*)$"
+                  },
+                  "index": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncFlexibleOutputFields/items/properties/index",
+                    "type": "integer",
+                    "title": "Index",
+                    "default": 28,
+                    "examples": [28]
+                  }
+                }
+              }
+            },
+            "pncAggregation": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation",
+              "type": "object",
+              "title": "P&C AGGREGATION",
+              "properties": {
+                "pncAggregateStudy": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggregateStudy",
+                  "type": "boolean",
+                  "title": "P&C Aggregate Study",
+                  "default": true,
+                  "examples": [true]
+                },
+                "pncAggOpIndexAttrFields": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields",
+                  "type": "array",
+                  "title": "P&C Aggregate Output Index Attribute Fields",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items",
+                    "type": "object",
+                    "title": "ITEMS",
+                    "properties": {
+                      "columnName": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/columnName",
+                        "type": "string",
+                        "title": "Column Name",
+                        "default": "bin",
+                        "examples": ["bin"],
+                        "pattern": "^(.*)$"
+                      },
+                      "context": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/context",
+                        "type": "string",
+                        "title": "Context",
+                        "default": "",
+                        "examples": [""],
+                        "pattern": "^(.*)$"
+                      },
+                      "columnAlias": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/columnAlias",
+                        "type": "string",
+                        "title": "Column Alias",
+                        "default": "bin",
+                        "examples": ["bin"],
+                        "pattern": "^(.*)$"
+                      },
+                      "patientHubColumnName": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/patientHubColumnName",
+                        "type": "string",
+                        "title": "Patient Hub Column Name",
+                        "default": "bin",
+                        "examples": ["bin"],
+                        "pattern": "^(.*)$"
+                      },
+                      "externalColumnName": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/externalColumnName",
+                        "type": "string",
+                        "title": "External Column Name",
+                        "default": "",
+                        "examples": [""],
+                        "pattern": "^(.*)$"
+                      },
+                      "externalTableName": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/externalTableName",
+                        "type": "string",
+                        "title": "External Table Name",
+                        "default": "",
+                        "examples": [""],
+                        "pattern": "^(.*)$"
+                      },
+                      "index": {
+                        "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/pncAggOpIndexAttrFields/items/properties/index",
+                        "type": "integer",
+                        "title": "Index",
+                        "default": 28,
+                        "examples": [28]
+                      }
+                    }
+                  }
+                },
+                "persistenceAggOpStrataFields": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/persistenceAggOpStrataFields",
+                  "type": "array",
+                  "title": "Persistence Aggregate Output Strata Fields",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/persistenceAggOpStrataFields/items",
+                    "type": "string",
+                    "title": "The Items Schema",
+                    "default": [
+                      "COHORT_DESC",
+                      "MARKET_TYPE",
+                      "METRICS_TYPE",
+                      "REPORTING_INT_ID",
+                      "THERAPY_STATUS"
+                    ],
+                    "examples": [
+                      "COHORT_DESC",
+                      "MARKET_TYPE",
+                      "METRICS_TYPE",
+                      "REPORTING_INT_ID",
+                      "THERAPY_STATUS"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                },
+                "complianceAggOpStrataFields": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/complianceAggOpStrataFields",
+                  "type": "array",
+                  "title": "Compliance Aggregate Output Strata Fields",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/complianceAggOpStrataFields/items",
+                    "type": "string",
+                    "title": "Items",
+                    "default": ["COHORT_DESC", "MARKET_TYPE", "METRICS_TYPE"],
+                    "examples": ["COHORT_DESC", "MARKET_TYPE", "METRICS_TYPE"],
+                    "pattern": "^(.*)$"
+                  }
+                },
+                "complianceAverageAggregateFields": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/complianceAverageAggregateFields",
+                  "type": "array",
+                  "title": "Compliance Average Aggregate Fields",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/complianceAverageAggregateFields/items",
+                    "type": "string",
+                    "title": "Items",
+                    "default": [
+                      "TOTAL_LENGTH_OF_THERAPY",
+                      "duration_of_therapy"
+                    ],
+                    "examples": [
+                      "TOTAL_LENGTH_OF_THERAPY",
+                      "duration_of_therapy"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                },
+                "subTotalsFieldsPersistence": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/subTotalsFieldsPersistence",
+                  "type": "array",
+                  "title": "Sub Totals Fields Persistence",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/subTotalsFieldsPersistence/items",
+                    "type": "string",
+                    "title": "Items",
+                    "default": ["REPORTING_INT_ID", "THERAPY_STATUS"],
+                    "examples": ["REPORTING_INT_ID", "THERAPY_STATUS"],
+                    "pattern": "^(.*)$"
+                  }
+                },
+                "subTotalsFieldsCompliance": {
+                  "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/subTotalsFieldsCompliance",
+                  "type": "array",
+                  "title": "Sub Totals Fields Compliance",
+                  "items": {
+                    "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncAggregation/properties/subTotalsFieldsCompliance/items",
+                    "type": "string",
+                    "title": "Items",
+                    "default": ["MARKET_TYPE", "METRICS_TYPE"],
+                    "examples": ["MARKET_TYPE", "METRICS_TYPE"],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "job_information": {
+      "$id": "#/properties/job_information",
+      "type": "object",
+      "title": "JOB INFORMATION",
+      "properties": {
+        "notification_email": {
+          "$id": "#/properties/job_information/properties/notification_email",
+          "type": "string",
+          "title": "Notification Email",
+          "default": "lee.wagner@us.imshealth.com",
+          "examples": ["lee.wagner@us.imshealth.com"],
+          "pattern": "^(.*)$"
+        },
+        "submitted_timestamp": {
+          "$id": "#/properties/job_information/properties/submitted_timestamp",
+          "type": "string",
+          "title": "Submitted Time Stamp",
+          "default": "2019-01-23T15:10:59.627-04:00",
+          "examples": ["2019-01-23T15:10:59.627-04:00"],
+          "pattern": "^(.*)$"
+        },
+        "username": {
+          "$id": "#/properties/job_information/properties/username",
+          "type": "string",
+          "title": "Username",
+          "default": "",
+          "examples": ["85"],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}

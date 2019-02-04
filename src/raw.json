@@ -1,0 +1,206 @@
+{
+  "job_parameters": {
+    "pncStudy": {
+      "pncPatientStudy": true,
+
+      "persistence": true,
+
+      "compliance": true,
+
+      "lengthOfTherapy": false,
+
+      "pncMockInputTable": "",
+
+      "pncReportingLevels": {
+        "productLevel": true,
+
+        "classLevel": false,
+
+        "marketLevel": false
+      },
+
+      "pncGroupInfo": {
+        "productGroupName": "mkted_prod_nm"
+      },
+
+      "pncMarketType": "MONO",
+
+      "gracePeriod": {
+        "gracePeriodEnum": "NUM_DAYS",
+
+        "gracePeriodValue": 29
+      },
+
+      "tieBreaker": "HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID",
+
+      "pncAttrRank": {
+        "rank": null,
+
+        "groupName": null,
+
+        "fileName": null
+      },
+
+      "cohortGroup": {
+        "cohortPeriodGrouping": "MONTHLY",
+
+        "startDate": 1485907200000,
+
+        "numOfCohortPeriods": 2
+      },
+
+      "pncReportingIntervals": {
+        "reportingIntervalDays": 30,
+
+        "reportingIntervalsToTrack": 2
+      },
+
+      "dataAvailability": "COMPLETE_TIME_PERIODS",
+
+      "timePeriods": {
+        "pncLookBack": 30,
+
+        "pncLookForward": 30
+      },
+
+      "persistenceConf": {
+        "patientTherapyCategories": "PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE",
+
+        "patientTherapyStatusRule": "SWITCH_BASED_HIERARCHY",
+
+        "patientTherapyStatusType": "DYNAMIC_STATUS",
+
+        "persistencePercentage": 75
+      },
+
+      "retainClaimsWithMonoPnCComplaintFlagAsNo": true,
+
+      "sobFilters": "ALL",
+
+      "complianceConf": {
+        "complianceMetrics": ["somemetrics"],
+
+        "overlappingDaysSupply": false
+      },
+
+      "pncFlexibleOutputFields": [
+        {
+          "columnName": "bin",
+
+          "context": "",
+
+          "columnAlias": "bin",
+
+          "patientHubColumnName": "bin",
+
+          "externalColumnName": "",
+
+          "externalTableName": "",
+
+          "index": 28
+        },
+
+        {
+          "columnName": "st_fips_cd",
+
+          "context": 2,
+
+          "columnAlias": "st_fips_cd",
+
+          "patientHubColumnName": "",
+
+          "externalColumnName": "",
+
+          "externalTableName": "provider_src_all",
+
+          "index": 109
+        },
+
+        {
+          "columnName": "pat_brth_yr_nbr",
+
+          "context": null,
+
+          "columnAlias": "pat_brth_yr_nbr",
+
+          "patientHubColumnName": "pat_brth_yr_nbr",
+
+          "externalColumnName": "",
+
+          "externalTableName": "",
+
+          "index": 4
+        },
+
+        {
+          "columnName": "region_cens_id",
+
+          "context": null,
+
+          "columnAlias": "pat_region_cens_id",
+
+          "patientHubColumnName": "pat_zip3_cd",
+
+          "externalColumnName": "zip3",
+
+          "externalTableName": "v_zip3",
+
+          "index": 83
+        }
+      ],
+
+      "pncAggregation": {
+        "pncAggregateStudy": true,
+
+        "pncAggOpIndexAttrFields": [
+          {
+            "columnName": "bin",
+
+            "context": "",
+
+            "columnAlias": "bin",
+
+            "patientHubColumnName": "bin",
+
+            "externalColumnName": "",
+
+            "externalTableName": "",
+
+            "index": 28
+          }
+        ],
+
+        "persistenceAggOpStrataFields": [
+          "COHORT_DESC",
+          "MARKET_TYPE",
+          "METRICS_TYPE",
+          "REPORTING_INT_ID",
+          "THERAPY_STATUS"
+        ],
+
+        "complianceAggOpStrataFields": [
+          "COHORT_DESC",
+          "MARKET_TYPE",
+          "METRICS_TYPE"
+        ],
+
+        "complianceAverageAggregateFields": [
+          "TOTAL_LENGTH_OF_THERAPY",
+          "duration_of_therapy"
+        ],
+
+        "subTotalsFieldsPersistence": ["REPORTING_INT_ID", "THERAPY_STATUS"],
+
+        "subTotalsFieldsCompliance": ["MARKET_TYPE", "METRICS_TYPE"]
+      }
+    }
+  },
+
+  "job_information": {
+    "notification_email": "lee.wagner@us.imshealth.com",
+
+    "submitted_timestamp": "2019-01-23T15:10:59.627-04:00",
+
+    "username": "85"
+  }
+}
