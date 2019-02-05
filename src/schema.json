@@ -96,6 +96,7 @@
               "$id": "#/properties/job_parameters/properties/pncStudy/properties/pncMarketType",
               "type": "string",
               "title": "P&C MARKET TYPE",
+              "enum": ["MONO", "CONCOMITANT","MIXED"],
               "default": "MONO",
               "examples": ["MONO"],
               "pattern": "^(.*)$"
@@ -109,6 +110,8 @@
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/gracePeriod/properties/gracePeriodEnum",
                   "type": "string",
                   "title": "Grace Period Enum",
+                  "enum":["NUM_DAYS","PERCENT_PRIOR"],
+                  "enumNames":["NUM_DAYS","PERCENT_PRIOR"],
                   "default": "NUM_DAYS",
                   "examples": ["NUM_DAYS"],
                   "pattern": "^(.*)$"
@@ -126,6 +129,8 @@
               "$id": "#/properties/job_parameters/properties/pncStudy/properties/tieBreaker",
               "type": "string",
               "title": "Tie Breaker",
+              "enum":["HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID","PRODUCT_HIERARCHY"],
+              "enumNames":["HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID","PRODUCT_HIERARCHY"],
               "default": "HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID",
               "examples": ["HIGHEST_DAYS_SUPPLY_MIN_CLAIM_ID"],
               "pattern": "^(.*)$"
@@ -165,8 +170,10 @@
               "properties": {
                 "cohortPeriodGrouping": {
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup/properties/cohortPeriodGrouping",
-                  "type": "string",
+                  "type": "string",                  
                   "title": "Cohort Period Grouping",
+                  "enum": ["MONTHLY","WEEKLY","CALENDER_QUARTERS","ROLLING_QUARTERS","CALENDER_HALF_YEARLY","CALENDER_YEARLY","MOVING_ANNUAL_TOTAL","FULL_SELECTION_PERIOD"],
+                  "enumNames": ["MONTHLY","WEEKLY","CALENDER_QUARTERS","ROLLING_QUARTERS","CALENDER_HALF_YEARLY","CALENDER_YEARLY","MOVING_ANNUAL_TOTAL","FULL_SELECTION_PERIOD"],
                   "default": "MONTHLY",
                   "examples": ["MONTHLY"],
                   "pattern": "^(.*)$"
@@ -174,8 +181,8 @@
                 "startDate": {
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/cohortGroup/properties/startDate",
                   "type": "string",
-                  "title": "Start Date",
-                  "default": "1485907200000",
+                  "title": "Start Date (yyyy mm dd)",
+                  "default": "2018-02-01",
                   "examples": ["1485907200000"]
                 },
                 "numOfCohortPeriods": {
@@ -246,6 +253,8 @@
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyCategories",
                   "type": "string",
                   "title": "Patient Therapy Categories",
+                  "enum":["PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE","PERSISTENT_RESTART_NONPERSISTENT","PERSISTENT_NONPERSISTENT"],
+                  "enumNames":["PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE","PERSISTENT_RESTART_NONPERSISTENT","PERSISTENT_NONPERSISTENT"],
                   "default": "PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE",
                   "examples": [
                     "PERSISTENT_RESTART_SWITCH_OFFTHERAPY_DISCONTINUE"
@@ -256,6 +265,8 @@
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyStatusRule",
                   "type": "string",
                   "title": "Patient Therapy Status Rule",
+                  "enum":["SWITCH_BASED_HIERARCHY","STANDARD_HIERARCHY"],
+                  "enumNames":["SWITCH_BASED_HIERARCHY","STANDARD_HIERARCHY"],
                   "default": "SWITCH_BASED_HIERARCHY",
                   "examples": ["SWITCH_BASED_HIERARCHY"],
                   "pattern": "^(.*)$"
@@ -264,6 +275,8 @@
                   "$id": "#/properties/job_parameters/properties/pncStudy/properties/persistenceConf/properties/patientTherapyStatusType",
                   "type": "string",
                   "title": "Patient Therapy Status Type",
+                  "enum":["DYNAMIC_STATUS", "STATIC_STATUS"],
+                  "enumNames":["DYNAMIC_STATUS", "STATIC_STATUS"],
                   "default": "DYNAMIC_STATUS",
                   "examples": ["DYNAMIC_STATUS"],
                   "pattern": "^(.*)$"
@@ -284,10 +297,26 @@
               "default": true,
               "examples": [true]
             },
+            "retainIneligiblePatientsFlag": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/retainIneligiblePatientsFlag",
+              "type": "boolean",
+              "title": "Retain Ineligible Patients Flag",
+              "default": false,
+              "examples": [true]
+            },
+            "retainUnstablePharmaciesFlag": {
+              "$id": "#/properties/job_parameters/properties/pncStudy/properties/retainUnstablePharmaciesFlag",
+              "type": "boolean",
+              "title": "Retain Unstable Pharmacies Flag",
+              "default": false,
+              "examples": [true]
+            },
             "sobFilters": {
               "$id": "#/properties/job_parameters/properties/pncStudy/properties/sobFilters",
               "type": "string",
               "title": "SOB Filters",
+              "enum":["ALL","NTB","NTM"],
+              "enumNames":["ALL","NTB","NTM"],
               "default": "ALL",
               "examples": ["ALL"],
               "pattern": "^(.*)$"

@@ -2,7 +2,11 @@
   "job_parameters": {
     "pncStudy": {
       "pncMockInputTable": {
-        "ui:widget": "textarea"
+        "ui:widget": "textarea",
+        "ui:placeholder": "database.tablename"
+      },
+      "pncMarketType":{
+        "ui:widget": "radio"
       },
       "gracePeriod":{
         "gracePeriodValue":{
@@ -11,7 +15,12 @@
       },
       "cohortGroup": {
         "startDate": {
-          "ui:widget": "alt-date"
+          "ui:widget": "alt-date",
+          "ui:options": {
+            "yearsRange": [2014, 2019],
+            "hideNowButton": false,
+            "hideClearButton": true
+          }
         },
         "numOfCohortPeriods": {
           "ui:widget": "range"

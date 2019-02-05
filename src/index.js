@@ -11,15 +11,15 @@ import Form from "react-jsonschema-form";
 //import pncschema from "./schema.1.json";
 import pncschema from "./schema.json";
 import pncuiSchema from "./uiSchema.json";
-import axios from "axios"
+//import axios from "axios"
 
-let OutputJSON = '';
+//let OutputJSONStr = '';
 const formData = {
   job_parameters: {
     pncStudy: {
       pncMockInputTable: "",
       cohortGroup: {
-        startDate: "02/01/2017"
+        // startDate: "2017-02-01"
       }
     }
   },
@@ -46,32 +46,50 @@ class App extends Component {
   
 
   handleSubmit(event) {
-    // OutputJSON = JSON.stringify(event.formData);
-    //console.log(formData);
-    // console.log(OutputJSON);
-    // document.getElementById("outJson").innerText = OutputJSON;
+    // // OutputJSON = JSON.stringify(event.formData);
+    // //console.log(formData);
+    // // console.log(OutputJSON);
+    // // document.getElementById("outJson").innerText = OutputJSON;
 
-    //event.preventDefault();
+    // //event.preventDefault();
 
-    const auth = {
-      "username" : "ppspusr",
-      "password" : "Ppsprod1"
-    };
+    // const auth = {
+    //   "username" : "ppspusr",
+    //   "password" : "Ppsprod1"
+    // };
 
-    const headers = {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json'
-    }
+    // // const headers = {
+    // //   'Access-Control-Allow-Origin': '*',
+    // //   'Content-Type': 'application/json'
+    // // }
 
-    // axios.post('http://cdts99hdfe04p.rxcorp.com:3993/submitFtpaReportRequest', { auth }, {headers})
+    // axios.post('http://cdts99hdfe04p.rxcorp.com:3993/submitFtpaReportRequest', { auth })
     //   .then(res => {
     //     console.log(res);
     //     console.log(res.data);
     //   })
   }
   handleChange(event){
-    OutputJSON = JSON.stringify(event.formData);
-    document.getElementById("outJson").innerText = OutputJSON;
+    const OutputJSON = event.formData;
+    console.log("OutputJSON --> " + OutputJSON.job_parameters.pncStudy.cohortGroup.startDate)
+    
+
+      const datestring = (OutputJSON.job_parameters.pncStudy.cohortGroup.startDate).toString()     
+     
+     
+      const parts =  datestring.match(/(\d+)/g);
+
+      console.log("parts --> " + parts);
+      
+      const startDateUTC = Date.UTC(+parts[0], parts[1]-1, +parts[2], +"00", +"00");
+
+      OutputJSON.job_parameters.pncStudy.cohortGroup.startDate = startDateUTC;
+
+      const OutputJSONStr = JSON.stringify(OutputJSON);
+      document.getElementById("outJson").innerText = OutputJSONStr;
+      
+      OutputJSON.job_parameters.pncStudy.cohortGroup.startDate = datestring;
+    
   }
   render() {
     return (
