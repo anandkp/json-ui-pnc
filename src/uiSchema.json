@@ -2,7 +2,6 @@
   "job_parameters": {
     "pncStudy": {
       "pncMockInputTable": {
-        "ui:widget": "textarea",
         "ui:placeholder": "database.tablename"
       },
       "pncMarketType":{
